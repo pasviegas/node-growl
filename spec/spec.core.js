@@ -63,5 +63,40 @@ describe 'Growl'
         args.should.eql ['growlnotify', '-m', '5 passes']
       end
     end
+    
+    describe 'given the image option'
+      it 'should add --iconpath when *.icns'
+        Growl.notify('5 passes', { image: 'pass.icns' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.icns']
+      end
+      
+      it 'should add --iconpath when *.icns'
+        Growl.notify('5 passes', { image: 'pass.icns' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.icns']
+      end
+      
+      it 'should add --image when *.{png,jpeg,jpg,gif}'
+        Growl.notify('5 passes', { image: 'pass.png' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.png']
+        Growl.notify('5 passes', { image: 'pass.jpeg' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.jpeg']
+        Growl.notify('5 passes', { image: 'pass.jpg' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.jpg']
+        Growl.notify('5 passes', { image: 'pass.gif' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--iconpath', 'pass.gif']
+      end
+      
+      it 'should add --appIcon when capitalized word'
+        Growl.notify('5 passes', { image: 'Safari' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--appIcon', 'Safari']
+      end
+      
+      it 'should add --icon when an extension'
+        Growl.notify('5 passes', { image: '.jpeg' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--icon', 'jpeg']
+        Growl.notify('5 passes', { image: 'jpeg' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--icon', 'jpeg']
+      end
+    end
   end
 end
