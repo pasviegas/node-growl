@@ -1,7 +1,17 @@
 
-# YourLib
+# Growl for JavaScript (Rhino)
 
-Description
+lib/growl.js adds Growl support for the Rhino JavaScript engine. This is
+essentially a port of my [Ruby Growl Library](http://github.com/visionmedia/growl).
+
+## Examples
+
+  Growl.notify('You have mail!')
+  Growl.notify('5 new messages', { sticky: true })
+
+## More Information
+
+ * For in-depth documentation please view spec/spec.core.js
 
 ## License 
 

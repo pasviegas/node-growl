@@ -116,5 +116,12 @@ describe 'Growl'
         args.should.eql ['growlnotify', '-m', '5 passes', '--icon', 'pdf']
       end
     end
+    
+    describe 'given several options'
+      it 'should still work'
+        Growl.notify('5 new emails', { title: 'Email Client', image: 'Safari', sticky: true })
+        args.should.eql ['growlnotify', '-m', '5 new emails', '--appIcon', 'Safari', '--sticky', 'Email Client']
+      end
+    end
   end
 end
