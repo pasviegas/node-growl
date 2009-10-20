@@ -1,5 +1,5 @@
 
-0.0.1 / YYYY-MM-DD
+1.0.0 / 2009-10-20
 ==================
   
-  * Changes
+  * Initial release
