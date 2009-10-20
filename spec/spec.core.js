@@ -34,7 +34,7 @@ describe 'Growl'
     describe 'given a message only'
       it 'should add the -m option'
         Growl.notify('wahoo')
-        args.should.eql ['growlnotify', '-m', 'wahoo', '']
+        args.should.eql ['growlnotify', '-m', 'wahoo']
       end
     end
     
@@ -42,6 +42,13 @@ describe 'Growl'
       it 'should add a trailing argument'
         Growl.notify('5 passes', { title: 'JSpec' })
         args.should.eql ['growlnotify', '-m', '5 passes', 'JSpec']
+      end
+    end
+    
+    describe 'given the name option'
+      it 'should add the --name switch'
+        Growl.notify('5 passes', { name: 'jspec' })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--name', 'jspec']
       end
     end
   end
