@@ -6,6 +6,7 @@ essentially a port of my [Ruby Growl Library](http://github.com/visionmedia/grow
 
 ## Examples
 
+@@@ javascript
     Growl.notify('You have mail!')
     Growl.notify('5 new messages', { sticky: true })
     Growl.notify('5 new emails', { title: 'Email Client', image: 'Safari', sticky: true })
@@ -14,7 +15,8 @@ essentially a port of my [Ruby Growl Library](http://github.com/visionmedia/grow
     Growl.notify('Show image', { image: 'path/to/my.image.png' })
     Growl.notify('Show png filesystem icon', { image: 'png' })
     Growl.notify('Show pdf filesystem icon', { image: 'article.pdf' })
-    
+@@@
+
 ## Options
 
   - title
