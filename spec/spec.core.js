@@ -14,6 +14,26 @@ describe 'Growl'
     end  
   end
   
+  describe '.extname()'
+    describe 'given a filename'
+      it 'should return the extension'
+        Growl.extname('something.js').should.eql 'js'
+      end
+    end
+    
+    describe 'given a complicated filename'
+      it 'should return the extension'
+        Growl.extname('foo bar.something.else.js').should.eql 'js'
+      end
+    end
+    
+    describe 'given a path without an extension'
+      it 'should return null'
+        Growl.extname('foo').should.be_null
+      end
+    end
+  end
+  
   describe '.binVersion()'
     it 'should be set to the growlnotify version'
       Growl.binVersion().should.match(/^\d+\.\d+\.\d+$/)
