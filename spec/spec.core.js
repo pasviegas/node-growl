@@ -51,5 +51,17 @@ describe 'Growl'
         args.should.eql ['growlnotify', '-m', '5 passes', '--name', 'jspec']
       end
     end
+    
+    describe 'given the sticky option'
+      it 'should add the --sticky switch'
+        Growl.notify('5 passes', { sticky: true })
+        args.should.eql ['growlnotify', '-m', '5 passes', '--sticky']
+      end
+      
+      it 'should add nothing when false'
+        Growl.notify('5 passes', { sticky: false })
+        args.should.eql ['growlnotify', '-m', '5 passes']
+      end
+    end
   end
 end
