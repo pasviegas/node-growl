@@ -1,6 +1,6 @@
 
 describe 'Growl'
-  before_each 
+  before
     var exec = Growl.exec
     Growl.exec = function(){
       args = Array.prototype.slice.apply(arguments)
