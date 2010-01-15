@@ -1,4 +1,3 @@
-
 # Growl for nodejs
 
 lib/growl.js adds Growl support for nodejs
@@ -31,4 +30,4 @@ lib/growl.js adds Growl support for nodejs
       - otherwise treated as --icon
       
 ## Thanks to
-	- TJ Holowaychuk (js-grow;) <tj@vision-media.ca>
+	- TJ Holowaychuk (js-growl - http://github.com/visionmedia/js-growl) <tj@vision-media.ca>
